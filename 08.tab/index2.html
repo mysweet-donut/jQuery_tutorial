@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-tab</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style2.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>tab 2</h1>
+
+        <section>
+            <ul class="tab">
+                <li><a href="#x">tab 1</a></li>
+                <li><a href="#x">tab 2</a></li>
+                <li><a href="#x">tab 3</a></li>
+            </ul>
+        </section>
+
+        <div class="content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque obcaecati illum nemo voluptates, necessitatibus reprehenderit ratione in fugiat inventore cupiditate, dolorum porro. Officia beatae sed quam cumque quaerat accusamus quos facilis eveniet, officiis deserunt est reiciendis sit facere sint consectetur voluptatem, dicta iure unde veniam libero aspernatur?
+        </div>
+        <div class="content">
+            설레는 같은 오직 뜨고, 원질이 사람은 앞이 피가 힘있다. 끓는 천지는 두기 현저하게 끝에 희망의 그리하였는가? 오직 위하여서, 구하지 청춘 보는 들어 인류의 황금시대다. 만물은 없으면 방황하여도, 내려온 충분히 뛰노는 모래뿐일 하였으며, 아름다우냐? 천고에 청춘 맺어, 용기가 사랑의 아름답고 꽃이 황금시대다. 품었기 위하여 인간의 무엇을 가는 같으며, 봄바람이다. 찾아다녀도, 그들은 되는 뿐이다. 이상을 눈이 없는 내는 사라지지 것이다.보라, 희망의 철환하였는가? 찾아 인생에 몸이 밝은 교향악이다. 별과 그들의 용감하고 봄바람이다. 노래하며 하는 않는 너의 불어 소금이라 그들을 것이다.
+        </div>
+        <div class="content">
+            주며, 만천하의 얼음 주는 공자는 피다. 노래하며 갑 이것이야말로 봄바람이다. 이상의 것은 소금이라 동력은 가는 위하여 든 것이다. 산야에 얼음 못할 그들은 두기 낙원을 보이는 인생에 있다. 두손을 방지하는 인간에 모래뿐일 원질이 천고에 그들은 남는 없는 것이다. 얼마나 투명하되 같으며, 황금시대를 봄바람을 그와 끝까지 힘있다. 맺어, 되는 풍부하게 없으면, 자신과 황금시대다. 이상을 얼마나 긴지라 것이다. 능히 열락의 그들은 우리 위하여 원질이 사람은 위하여서 황금시대다. 심장의 품으며, 사랑의 품었기 같이 이상은 가진 있음으로써 그것을 때문이다.
+        </div>
+    </div>
+
+    <script>
+        var btns = $('.tab li')
+        var contents = $('.content')
+
+        btns.eq(0).addClass('active')
+        contents.hide().eq(0).show()
+
+        btns.click(function(){
+            btns.removeClass('active')
+            $(this).addClass('active')
+
+            contents.hide()
+            contents.eq($(this).index()).show()
+            $(this).index()
+        })
+    </script>
+</body>
+</html>

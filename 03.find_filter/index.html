@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery find & filter</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>find & filter</h1>
+        <ul class="cards">
+            <li>
+                <img src="../images/img_01.jpg" alt="">
+                <p>this is title 1</p>
+            </li>
+            <li>
+                <img src="../images/img_02.jpg" alt="">
+                <p>this is title 3</p>
+            </li>
+            <li>
+                <img src="../images/img_03.jpg" alt="">
+                <p>this is title 3</p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var item = $('.cards li')
+        var time = 300
+
+        //stop():맨 마지막 동작만 수행한다. 
+        //안적으면 마우스를 많이 움직일수록 오류가 난다.
+        item.eq(0).mouseenter(function(){
+            $(this).find('p').stop().animate({opacity:1, bottom:0}, time)
+            $(this).addClass('active')
+        }).mouseleave(function(){
+            $(this).find('p').stop().animate({opacity:0, bottom:-50}, time)
+            $(this).removeClass('active')
+        })
+
+        item.eq(1).mouseenter(function(){
+            $(this).find('p').stop().animate({opacity:1}, time)
+            $(this).addClass('active')
+        }).mouseleave(function(){
+            $(this).find('p').stop().animate({opacity:0}, time)
+            $(this).removeClass('active')
+        })
+
+        item.eq(2).mouseenter(function(){
+            $(this).find('p').stop().animate({opacity:1, left:0}, time)
+            $(this).addClass('active')
+        }).mouseleave(function(){
+            $(this).find('p').stop().animate({opacity:0, left:'-100%'}, time)
+            $(this).removeClass('active')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-accordion</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>accordion</h1>
+
+        <div class="accordion">
+            <h2>this is title 1</h2>
+            <p class="content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus odio commodi est repellendus voluptas minus voluptatibus rem temporibus repudiandae reiciendis dolor aperiam laboriosam, assumenda fuga iure maxime ea perferendis doloribus?
+            </p>
+    
+            <h2>this is title 2</h2>
+            <p class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nesciunt id, culpa nam quisquam aperiam amet, facilis aliquam quia tempora temporibus ea recusandae delectus! Quos dolore laborum dicta. Reprehenderit ipsa laboriosam cupiditate, porro voluptatem alias ullam dolores pariatur modi repellendus. Veritatis illo accusamus impedit reiciendis? Dolorem, ab culpa aliquam possimus animi earum ut atque eum quos ipsa dicta rem! Voluptates eos minima nesciunt? Animi nostrum voluptates incidunt eos quisquam labore culpa aliquam possimus, sit, et nemo quo praesentium perferendis iure maxime architecto provident. Fuga nemo, fugit assumenda consectetur, dolore quas vitae ea, quibusdam iusto mollitia molestias beatae cumque ab! Adipisci.
+            </p>
+    
+            <h2>this is title 3</h2>
+            <p class="content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus odio commodi est repellendus voluptas minus voluptatibus rem temporibus repudiandae reiciendis dolor aperiam laboriosam, assumenda fuga iure maxime ea perferendis doloribus?
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var title = $('.accordion h2')
+        var content = $('.content')
+
+        title.eq(0).addClass('active')
+        content.eq(0).slideDown()
+
+        title.click(function(){
+            $(this).toggleClass('active')
+            $(this).next().slideToggle()
+        })
+    </script>
+</body>
+</html>

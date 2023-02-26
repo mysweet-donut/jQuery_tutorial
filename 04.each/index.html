@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-each</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>each</h1>
+        <div class="card">
+            <div class="photo">
+                <img src="../images/img_01.jpg" alt="">
+                <div class="sns">
+                    <i class="xi-share"></i>
+                    <i class="xi-instagram"></i>
+                    <i class="xi-kakaostory"></i>
+                    <i class="xi-youtube-play"></i>
+                </div>
+            </div>
+            <div class="info">
+                <h2>this is title</h2>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia excepturi repellendus labore iure officiis minus vero odio dolorum autem magnam reiciendis incidunt impedit maxime totam magni, non nemo quasi cupiditate?
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var sns = $('.sns')
+        var item = $('.sns i')
+
+        sns.hover(
+            function(){
+                item.each(function(index){
+                    //console.log(index);
+                    $(this).stop().animate({left: index*50}, 300)
+                })
+            },
+            function(){
+                item.each(function(index){
+                    $(this).stop().animate({left:0}, 300)
+                })
+            }
+        )
+    </script>
+</body>
+</html>
