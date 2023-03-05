@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-magnific_popup</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"/>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./lib/magnific-popup.css">
+    <script src="./lib/jquery.magnific-popup.js"></script>
+    <script src="./app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Magnific popup</h1>
+
+        <div class="main">
+            <div class="btns">
+                <a href="#test-modal" class="popup-modal">
+                    open modal
+                </a>
+                <a href="https://www.youtube.com/watch?v=hlp926tu2Xk" class="popup-youtube">
+                    open youtube
+                </a>
+                <a href="./ajax.html" class="simple-ajax-popup">
+                    load ajax
+                </a>
+            </div>
+
+            <p>Single image lightbox</p>
+            <div class="single">
+                <a href="../images/img_01_b.jpg" class="image-popup-vertical-fit" title="안녕하세요">
+                    <img src="../images/img_01.jpg" alt="">
+                </a>
+                
+                <a href="../images/img_02_b.jpg" class="image-popup-fit-width" title="반갑습니다">
+                    <img src="../images/img_02.jpg" alt="">
+                </a>
+                
+                <a href="../images/img_03_b.jpg" class="image-popup-no-margins">
+                    <img src="../images/img_03.jpg" alt="">
+                </a>
+               
+            </div>
+
+            <p>lightbox gallery</p>
+            <div class="gallery">
+                <a href="./images/imag_01.jpg" title="암벽도시"></a>
+                <a href="./images/imag_02.jpg" title="궁전"></a>
+                <a href="./images/imag_03.jpg" title="여자사람"></a>
+                <a href="./images/imag_04.jpg" title="해변"></a>
+                <a href="./images/imag_05.jpg" title="문"></a>
+            </div>
+        </div>
+
+        <div id="test-modal" class="modal mfp-hide white-popup-block">
+            <h2>Modal</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod enim iusto ipsum molestiae nobis et repellendus voluptas numquam totam laudantium cupiditate, fugit consectetur ipsam? Molestias tempora pariatur laborum voluptates quis?
+            </p>
+            <a href="#x" class="popup-modal-dismiss">close</a>
+        </div>
+    </div>
+</body>
+</html>
