@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery-slide</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>slide</h1>
+
+      <div class="slider">
+        <ul class="slide">
+          <li class="item"><img src="../images/img_01.jpg" alt="" /></li>
+          <li class="item"><img src="../images/img_02.jpg" alt="" /></li>
+          <li class="item"><img src="../images/img_03.jpg" alt="" /></li>
+          <li class="item"><img src="../images/img_04.jpg" alt="" /></li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      var items = $('.item')
+      var width = 800
+      var interval = 2000
+      var speed = 1000
+      var slide = $('.slide')
+      var currentIndex = 1
+      var timer
+
+      function start() {
+        timer = setInterval(function () {
+          slide.animate({ marginLeft: '-=' + width }, speed, function () {
+            currentIndex++
+            if (currentIndex === items.length + 1) {
+              currentIndex = 1
+              slide.css('marginLeft', 0)
+            }
+          })
+        }, interval)
+      }
+
+      function stop() {
+        clearInterval(timer)
+      }
+
+      function init() {
+        var addItem = items
+          .eq(0)
+          .clone()
+          .css('left', items.length * width)
+
+        slide.append(addItem)
+
+        items.each(function (index) {
+          $(items[index]).css('left', index * width)
+        })
+
+        start()
+
+        slide.hover(stop, start)
+      }
+
+      init()
+    </script>
+  </body>
+</html>
